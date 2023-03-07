@@ -1,0 +1,26 @@
+LARE2D core directory
+
+This directory contains the core of the solver and the physics packages for LARE2D. Many of the files in this directory are core parts of the code which should not be altered by end users, but there are some sections which can be changed to change the range of simulations which can be performed by LARE.
+
+---------------------------------------------------------------
+shared_data.F90
+
+shared_data.F90 is the module which contains the global arrays used by LARE (compare with F77 common blocks). Any new global variables which are needed should be defined here.
+--------------------------------------------------------------
+mpi_routines.f90
+
+mpi_routines.f90 is the module which sets up the MPI parallel part of the code, and also allocates the main code arrays. Any new array variable added to the code should be allocated/deallocated in this module, using the existing arrays as a guide.
+--------------------------------------------------------------
+lagran.f90
+
+Most of lagran.f90 should not be altered by end users, but the single subroutine "eta_calc" is used to calculate the resistivity in the code. In the routine, simply set the array "eta" to the required value at every point in space and the code will then apply that value of resistivity in the simulation.
+
+--------------------------------------------------------------
+conduct.f90
+
+Contains the radiative loss, currently RTV as an example, and heating functions. An example is given of a heating function which includes about the most complicated prescription possible so that users ought to be able to modify easily.
+
+--------------------------------------------------------------
+setup.f90
+
+Contains the routines for defining stretched grids in x and y. Don't just use the default examples, make do what you want.
