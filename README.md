@@ -2,7 +2,7 @@
 
 A version of Lare2d, set up to model the solar corona. Full details to be in a future paper, probably.
 
-The original Lare2d readme is present, for making changes beyond the scope of what I've changed.
+The original Lare2d readme is present, for making changes to the original code (/my modifications)
 
 TO USE:
 
